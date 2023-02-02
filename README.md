@@ -3,6 +3,7 @@
 
 ### 👋 Personal note
 Please thoroughly review this process as things change and mistakes can be made.  
+This is a general summary. More extensive documents to be available soon.
 If you have any questions, feel free to reach out to <amitay1599@gmail.com>
 
 That's me https://amitaycohen.com/
@@ -43,13 +44,13 @@ Enjoy 🚀🚀
 
 
 ## Front
-* Buy a domain.
-* Connect it to Route 53 with Nameservers
+* Buy a domain from a provider (GoDaddy, google, etc).
+* Connect it to Route 53 with Nameservers.
 * Upload React’s build folder to a new S3.
 * Create a CloudFront distribution with an SSL certificate.
 
 ## Back
-* Set up EC2 - Amazon Linux 2.
+* Lanuch a new EC2 - Amazon Linux 2.
 * Set up security group (https, ssh).
 * Create a Route53 Record for connecting the IP address of the instance to api.mysite.com.
 * Connect to instance via SSH.
@@ -60,6 +61,8 @@ Enjoy 🚀🚀
 * Add CORS to node application based on your react origin.
 * Run pm2 start server.js.
 * Test route.
+
+
 
 
 ## Finish
