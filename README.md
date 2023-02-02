@@ -18,11 +18,11 @@ Enjoy 🚀🚀
 
 ## Index
 
-[⚙️ Process](#-Process)
-[💻 Useful Commands](#-Useful-Commands)
-[🔗 Links](#-links)
+* [⚙Process](#Process)
+* [Useful Commands](#Useful-Commands)
+* [Links](#-links)
 
-# ⚙️ Process
+# Process
 
 ### AWS Services
 - EC2 
