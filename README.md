@@ -1,7 +1,7 @@
 
 # Deploy React & NodeJS to AWS
 
-### 👋 Personal notes
+### 👋 Personal note
 Please thoroughly review this process as things change and mistakes can be made.  
 If you have any questions, feel free to reach out to amitay1599@gmail.com. 
 
