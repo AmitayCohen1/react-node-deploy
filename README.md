@@ -4,6 +4,7 @@
 ### 👋 Personal note
 Please thoroughly review this process as things change and mistakes can be made.  
 If you have any questions, feel free to reach out to amitay1599@gmail.com. 
+That's me https://amitaycohen.com/
 
 ###  Future updates to this document are planned to include
 - Backup and disaster recovery plan 💾
@@ -44,20 +45,21 @@ Enjoy 🚀🚀
 * Set up EC2 - Amazon Linux 2.
 * Set up security group (https, ssh).
 * Create a Route53 Record for connecting the IP address of the instance to api.mysite.com.
+* Connect to instance via SSH.
 * Download Node, Git, and PM2.
-* Connect GitHub SSH to EC2.
-* Clone your repo.
-* Add a testing route - app.get(‘/test’).
-* Install dependencies & create .env file.
-* Add CORS to node application.
+* Connect GitHub SSH to EC2, and clone your repo.
+* Add a testing route to your server (‘/test’).
+* Install dependencies & create .env file if needed.
+* Add CORS to node application based on your react origin.
 * Run pm2 start server.js.
 * Test route.
+
 
 ## Finish
 * Download Nginx.
 * Add proxy pass to nginx.conf.
 * Test route.
-* Update  nginx.conf for the new domain route (api.mysite.com).
+* Update nginx.conf for the new domain route (api.mysite.com).
 * Set up SSL using CertBot.
 * Add elastic IP for the instance assosiate it, and  change the record (api.mysite.com).
 * Test everything.
@@ -144,7 +146,6 @@ $ pm2 status
 ```bash
 $ pm2 logs
 ```
-
 
 
 
