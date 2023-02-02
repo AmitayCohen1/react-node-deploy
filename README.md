@@ -18,7 +18,7 @@ Enjoy 🚀🚀
 
 ## Index
 
-* [⚙Process](#Process)
+* [Process](#Process)
 * [Useful Commands](#Useful-Commands)
 * [Links](#-links)
 
