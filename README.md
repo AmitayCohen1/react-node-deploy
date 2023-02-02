@@ -16,6 +16,12 @@ That's me https://amitaycohen.com/
 Enjoy 🚀🚀
 
 
+## Index
+
+* Process
+* Useful Commands
+* Links
+---
 # Process
 
 ### AWS Services
@@ -149,25 +155,25 @@ $ pm2 logs
 ```
 
 
-
-
 ## 🔗 Links
-###  SSL For Amazon linux 2 (start from “Install and run Certbot” section and change apache to nginx)  
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt
 
 
-###  AWS Route 53 Domain Name 
-https://www.youtube.com/watch?v=jDz4j_kkyLA 
+[SSL For Amazon linux 2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt)
+(from “Install and run Certbot” section and change apache to nginx)
 
-###  Nginx Reverse Proxy on AWS EC2 Amazon Linux 2 
-https://www.youtube.com/watch?v=_EBARqreeao
 
-###  Deploy Node app on AWS EC2 Amazon Linux 2 
-https://www.youtube.com/watch?v=oHAQ3TzUTro
+[Route 53 - Domain  ](https://www.youtube.com/watch?v=jDz4j_kkyLA)
 
-###  Deploy React to CloudFront with HTTPS Custom Domain
-https://www.youtube.com/watch?v=lPVgfSXTE1Y&t=1s
+[Deploy Node on EC2](https://www.youtube.com/watch?v=_EBARqreeao)
 
-###  Setting Up And Deploying AWS EC2 Instances
-https://www.youtube.com/watch?v=GEVbYQWWJkQ
+[Deploy React to CloudFront with HTTPS Custom Domain](https://www.youtube.com/watch?v=lPVgfSXTE1Y&t=1s)
+
+[Deploying EC2 Instances](https://www.youtube.com/watch?v=GEVbYQWWJkQ)
+
+
+
+
+
+
+
 
