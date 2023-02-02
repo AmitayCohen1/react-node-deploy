@@ -20,7 +20,7 @@ Enjoy 🚀🚀
 
 - [Process](#Process)
 - [Useful Commands](#Useful-Commands)
-- [🔗 Links](#Links)
+- [🔗 Links](#-links)
 
 # Process
 
