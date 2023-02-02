@@ -18,9 +18,9 @@ Enjoy 🚀🚀
 
 ## Index
 
-[Process](#Process)
-[Useful Commands](#Useful Commands)
-[Links](#Links)
+- [Process](#Process)
+- [Useful Commands](#Useful Commands)
+- - [Links](#Links)
 
 # Process
 
