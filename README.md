@@ -3,7 +3,7 @@
 
 ### 👋 Personal note
 Please thoroughly review this process as things change and mistakes can be made.  
-If you have any questions, feel free to reach out to amitay1599@gmail.com. 
+If you have any questions, feel free to reach out to <amitay1599@gmail.com>
 
 That's me https://amitaycohen.com/
 
@@ -18,9 +18,9 @@ Enjoy 🚀🚀
 
 ## Index
 
-* Process
-* Useful Commands
-* Links
+[Process](#Process)
+[Useful Commands](#Useful Commands)
+[Links](#Links)
 
 # Process
 
@@ -171,6 +171,8 @@ $ pm2 logs
 [Deploying EC2 Instances](https://www.youtube.com/watch?v=GEVbYQWWJkQ)
 
 
+
+![myImage](https://media.giphy.com/media/XRB1uf2F9bGOA/giphy.gif)
 
 
 
