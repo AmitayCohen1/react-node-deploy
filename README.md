@@ -19,7 +19,7 @@ Enjoy 🚀🚀
 ## Index
 
 - [Process](#Process)
-- [Useful Commands](#Useful Commands)
+- [Useful Commands](#Useful)
 - [Links](#🔗 Links)
 
 # Process
@@ -133,7 +133,7 @@ $ sudo vim /etc/nginx/nginx.conf
 
 ### Nginx
 
-Commands
+Useful Commands
 ```bash
 $ pm2 start server.js 
 ```
