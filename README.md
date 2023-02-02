@@ -33,11 +33,12 @@ Enjoy 🚀🚀
 - Domain provider
 
 
+
 ## Front
 * Buy a domain.
-* Connect it to Route 53.
-* Upload React’s build folder to S3.
-* Create Distribution with SSL certificate with OAI, update security.
+* Connect it to Route 53 with Nameservers
+* Upload React’s build folder to a new S3.
+* Create a CloudFront distribution with an SSL certificate.
 
 ## Back
 * Set up EC2 - Amazon Linux 2.
