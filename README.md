@@ -6,7 +6,7 @@ Please thoroughly review this process as things change and mistakes can be made.
 This is a general summary. More extensive documents to be available soon.
 If you have any questions, feel free to reach out to <amitay1599@gmail.com>
 
-That's me https://amitaycohen.com/
+That's me https://amitaycohen.com/ 🧑🏼‍🚀
 
 ###  Future updates to this document are planned to include
 - Backup and disaster recovery plan 💾
@@ -19,9 +19,9 @@ Enjoy 🚀🚀
 
 ## Index
 
-[Process](#Process)
-[Useful Commands](#Useful Commands)
-[Links](#Links)
+* [Process](#Process)
+* [Useful Commands](#Useful-Commands)
+* [Links](#-links)
 
 
 
@@ -75,7 +75,7 @@ Enjoy 🚀🚀
 
 
 
-## Commands
+# Useful Commands
 
 
 ### NodeJS
@@ -135,7 +135,7 @@ $ sudo vim /etc/nginx/nginx.conf
 
 ### Nginx
 
-Commands
+Useful Commands
 ```bash
 $ pm2 start server.js 
 ```
@@ -157,7 +157,7 @@ $ pm2 logs
 ```
 
 
-## 🔗 Links
+# 🔗 Links
 
 
 [SSL For Amazon linux 2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt)
