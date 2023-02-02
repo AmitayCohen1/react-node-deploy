@@ -73,7 +73,7 @@ Enjoy 🚀🚀
 
 
 
-# 💻 Useful Commands
+# Useful Commands
 
 
 ### NodeJS
