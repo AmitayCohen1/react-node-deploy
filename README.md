@@ -23,6 +23,8 @@ Enjoy 🚀🚀
 [Useful Commands](#Useful Commands)
 [Links](#Links)
 
+
+
 # Process
 
 ### AWS Services
@@ -42,28 +44,24 @@ Enjoy 🚀🚀
 - Domain provider
 
 
-
 ## Front
-* Buy a domain from a provider (GoDaddy, google, etc).
+* Buy a domain from a provider (GoDaddy, Google, etc).
 * Connect it to Route 53 with Nameservers.
 * Upload React’s build folder to a new S3.
-* Create a CloudFront distribution with an SSL certificate.
+* Create a CloudFront distribution and request an SSL certificate.
 
 ## Back
-* Lanuch a new EC2 - Amazon Linux 2.
-* Set up security group (https, ssh).
-* Create a Route53 Record for connecting the IP address of the instance to api.mysite.com.
+* Lanuch a new EC2 instance - Amazon Linux 2.
+* Set up security group (HTTPS, HTTP, SSH).
+* Create a Route 53 Record for connecting the IP address of the instance to api.mysite.com (Later we will switch it with an elastic ip).
 * Connect to instance via SSH.
 * Download Node, Git, and PM2.
-* Connect GitHub SSH to EC2, and clone your repo.
+* Connect GitHub SSH to your EC2, and clone your repo.
 * Add a testing route to your server (‘/test’).
 * Install dependencies & create .env file if needed.
 * Add CORS to node application based on your react origin.
 * Run pm2 start server.js.
 * Test route.
-
-
-
 
 ## Finish
 * Download Nginx.
@@ -71,6 +69,7 @@ Enjoy 🚀🚀
 * Test route.
 * Update nginx.conf for the new domain route (api.mysite.com).
 * Set up SSL using CertBot.
+* Delete HTTP from your security group.
 * Add elastic IP for the instance assosiate it, and  change the record (api.mysite.com).
 * Test everything.
 
