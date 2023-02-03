@@ -72,7 +72,7 @@ Enjoy 🚀🚀
 * Set up SSL using CertBot.
 * Delete HTTP from your security group.
 * Add elastic IP for the instance assosiate it, and  change the record (api.mysite.com).
-* Go make some cool shit
+* Go make some cool shit.
 
 
 
