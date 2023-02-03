@@ -133,9 +133,9 @@ $ sudo vim /etc/nginx/nginx.conf
 
 
 
-### Nginx
+### pm2
 
-Useful Commands
+Commands
 ```bash
 $ pm2 start server.js 
 ```
