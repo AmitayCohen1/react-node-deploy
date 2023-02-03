@@ -54,7 +54,7 @@ Enjoy 🚀🚀
 
 ## Back
 * Lanuch a new EC2 instance - Amazon Linux 2.
-* Set up security group (HTTPS, HTTP, SSH).
+* Set up security group - HTTPS, HTTP, SSH (after testing we will remove HTTP). 
 * Create a Route 53 Record for connecting the IP address of the instance to api.mysite.com (Later we will switch it with an elastic ip).
 * Connect to instance via SSH.
 * Download Node, Git, and PM2.
