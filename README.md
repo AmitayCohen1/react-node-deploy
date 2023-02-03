@@ -6,8 +6,7 @@ Please thoroughly review this process as things change and mistakes can be made.
 This is a general summary. More extensive documents to be available soon.
 If you have any questions, feel free to reach out to <amitay1599@gmail.com>
 
-
-<a href="https://amitaycohen.com/" target="_blank" rel="noopener">That's me 🧑🏼‍🚀</a>
+That's me 🧑🏼‍🚀 https://www.youtube.com/watch?v=GEVbYQWWJkQ
 
 
 
