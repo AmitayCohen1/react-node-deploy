@@ -61,7 +61,7 @@ Enjoy 🚀🚀
 * Connect GitHub SSH to your EC2, and clone your repo.
 * Add a testing route to your server (‘/test’).
 * Install dependencies & create .env file if needed.
-* Add CORS to node application based on your react origin.
+* Add CORS to Node application based on your react origin.
 * Run pm2 start server.js.
 * Test route.
 
