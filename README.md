@@ -68,12 +68,11 @@ Enjoy 🚀🚀
 ## Finish
 * Download Nginx.
 * Add proxy pass to nginx.conf.
-* Test route.
 * Update nginx.conf for the new domain route (api.mysite.com).
 * Set up SSL using CertBot.
 * Delete HTTP from your security group.
 * Add elastic IP for the instance assosiate it, and  change the record (api.mysite.com).
-* Test everything.
+* Go make some cool shit
 
 
 
