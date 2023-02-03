@@ -7,7 +7,7 @@ This is a general summary. More extensive documents to be available soon.
 If you have any questions, feel free to reach out to <amitay1599@gmail.com>
 
 
-<a href="[placeholder.com](https://amitaycohen.com/)" target="_blank" rel="noopener">That's me 🧑🏼‍🚀</a>
+<a href="https://amitaycohen.com/" target="_blank" rel="noopener">That's me 🧑🏼‍🚀</a>
 
 
 
