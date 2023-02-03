@@ -31,20 +31,19 @@ Enjoy 🚀🚀
 # Process
 
 ### AWS Services
-- EC2 
-- S3 
-- CloudFront 
-- Route 53 
-- Elastic IPs (EC2)
-- ACM (for CloudFront SSL)
-
+- EC2 - Virtual servers for running applications.
+- S3 - Object storage for static files.
+- CloudFront - Content delivery network for fast distribution of static files.
+- Route 53 - Scalable domain name system for mapping domain names to IP addresses.
+- Elastic IPs (EC2) - Static IP addresses for EC2 instances.
+- ACM - SSL/TLS certificate management for secure communication over the internet.
 
 ### Other Services
-- Nginx  
-- CertBot (Nginx SSL) 
-- PM2 
+- Nginx - Web server for serving dynamic content and managing traffic (our reverse proxy).
+- CertBot (Nginx SSL) - SSL certificate management tool for Nginx.
+- PM2 - Process manager for Node.js applications.
 - GIT
-- Domain provider
+- Domain provider 
 
 
 ## Front
