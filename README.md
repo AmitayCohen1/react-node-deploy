@@ -49,7 +49,7 @@ Enjoy 🚀🚀
 ## Front
 * Buy a domain from a provider (GoDaddy, Google, etc).
 * Connect it to Route 53 with Nameservers.
-* Upload React’s build folder to a new S3.
+* Upload React’s build/dist folder to a new S3.
 * Create a CloudFront distribution and request an SSL certificate.
 
 ## Back
