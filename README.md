@@ -40,7 +40,7 @@ Enjoy 🚀🚀
 
 ### Other Services
 - Nginx - Web server for serving dynamic content and managing traffic (our reverse proxy).
-- CertBot (Nginx SSL) - SSL certificate management tool for Nginx.
+- CertBot - SSL certificate management tool for Nginx.
 - PM2 - Process manager for Node.js applications.
 - GIT.
 - Domain provider.
