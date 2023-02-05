@@ -107,6 +107,12 @@ sudo yum install -y git
 
 Install (Amazon linux 2)
 ```bash
+sudo amazon-linux-extras install nginx1 -y
+```
+
+SSL
+
+```bash
 sudo amazon-linux-extras install epel -y 
 ```
 
