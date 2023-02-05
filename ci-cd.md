@@ -23,6 +23,55 @@ Process:
 
 
 
+
+example: 
+name: Deploy to S3 and Invalidate CloudFront
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_REGION: us-west-2
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build React application
+      run: |
+        yarn install
+        yarn build
+
+    - name: Configure AWS CLI
+      uses: aws-actions/configure-aws-cli@v1
+      with:
+        aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Sync build directory to S3 bucket
+      run: |
+        aws s3 sync build/ s3://<your-bucket-name>/ --delete
+
+    - name: Invalidate CloudFront cache
+      run: |
+        aws cloudfront create-invalidation --distribution-id <your-distribution-id> --paths '/*'
+
+
+
+
+
+
+
+
 Links - 
 https://www.youtube.com/watch?v=4mnJyUYTf8E&ab_channel=banananeer
 https://www.youtube.com/watch?v=0tMkRSdp-Go&ab_channel=CodingTech
