@@ -82,15 +82,15 @@ Enjoy 🚀🚀
 Install (Amazon linux 2)
 
 ```bash
-$ sudo yum install -y gcc-c++ make
+sudo yum install -y gcc-c++ make
 ```
 
 ```bash
-$ curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
 ```
 
 ```bash
-$ sudo yum install -y nodejs
+sudo yum install -y nodejs
 ```
 
 
@@ -98,7 +98,7 @@ $ sudo yum install -y nodejs
 Install with yum
 
 ```bash
-$ sudo yum install -y git
+sudo yum install -y git
 ```
 
 
@@ -107,28 +107,28 @@ $ sudo yum install -y git
 
 Install (Amazon linux 2)
 ```bash
-$ sudo amazon-linux-extras install epel -y 
+sudo amazon-linux-extras install epel -y 
 ```
 
 ```bash
-$ sudo yum install -y certbot python2-certbot-nginx
+sudo yum install -y certbot python2-certbot-nginx
 ```
 
 ```bash
-$ sudo certbot
+sudo certbot
 ```
 
 Commands
 ```bash
-$ sudo systemctl start nginx
+sudo systemctl start nginx
 ```
 
 ```bash
-$ sudo systemctl restart nginx
+sudo systemctl restart nginx
 ```
 
 ```bash
-$ sudo vim /etc/nginx/nginx.conf
+sudo vim /etc/nginx/nginx.conf
 ```
 
 
@@ -137,23 +137,23 @@ $ sudo vim /etc/nginx/nginx.conf
 
 Commands
 ```bash
-$ pm2 start server.js 
+pm2 start server.js 
 ```
 
 ```bash
-$ pm2 kill 
+pm2 kill 
 ```
 
 ```bash
-$ pm2 stop all
+pm2 stop all
 ```
 
 ```bash
-$ pm2 status
+pm2 status
 ```
 
 ```bash
-$ pm2 logs
+pm2 logs
 ```
 
 
