@@ -25,6 +25,9 @@ Process:
 
 
 example: 
+
+
+```
 name: Deploy to S3 and Invalidate CloudFront
 
 on:
@@ -65,7 +68,7 @@ jobs:
       run: |
         aws cloudfront create-invalidation --distribution-id <your-distribution-id> --paths '/*'
 
-
+```
 
 
 
