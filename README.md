@@ -19,7 +19,6 @@ If you have any questions, feel free to reach out to <amitay1599@gmail.com>
 
 Enjoy 🚀🚀
 
-
 ## Index
 
 * [Process](#Process)
