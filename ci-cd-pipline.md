@@ -27,7 +27,7 @@ Process:
 example: 
 
 
-```
+```yamel
 name: Deploy to S3 and Invalidate CloudFront
 
 on:
