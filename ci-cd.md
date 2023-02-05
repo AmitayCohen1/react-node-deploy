@@ -1,9 +1,12 @@
-Process: 
+//Not ready
 
-1. Create an IAM user 
-2. Add aws env to github screts 
+Process:
+1. Create an IAM user
+2. Add aws env to GitHub secrets
 3. Create a .github/workflows/<work_flow_name>.yamel
 4. test deploymet
+
+
 
 
 Links - 
