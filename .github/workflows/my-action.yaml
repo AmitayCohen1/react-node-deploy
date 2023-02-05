@@ -21,7 +21,7 @@ jobs:
       - name: My first 
         run : ls -la 
 
-      -name: Github repoooo
+      - name: Github repoooo
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
 
