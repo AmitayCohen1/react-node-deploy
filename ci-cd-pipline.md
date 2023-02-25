@@ -8,9 +8,6 @@ Process:
 
 
 
-
-
-
 1. Create an IAM role with necessary permissions (e.g. s3:PutObject, s3:ListBucket, s3:GetBucketLocation, cloudfront:CreateInvalidation) in the AWS Management Console.
 2. Store the AWS credentials as secrets in your GitHub repository.
 3. Create a GitHub Actions workflow file with the following steps:
