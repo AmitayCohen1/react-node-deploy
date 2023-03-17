@@ -2,10 +2,8 @@
 # Deploy React & NodeJS to AWS
 
 ### 👋 Personal note
-Please thoroughly review this process as things change and mistakes can be made.  
-This is a general and basic example of deploying an MVP to get up and running. 
+This is a basic example of deploying an MVP to get up and running.      
 If you have any questions, feel free to reach out to <amitay1599@gmail.com>
-
 
 [That's me](https://www.amitaycohen.com/) 🧑🏼‍🚀 
 
