@@ -4,7 +4,6 @@
 ### 👋 Personal note
 Please thoroughly review this process as things change and mistakes can be made.  
 This is a general and basic example of deploying an MVP to get up and running. 
-More extensive documents to be available soon.
 If you have any questions, feel free to reach out to <amitay1599@gmail.com>
 
 
