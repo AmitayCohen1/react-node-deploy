@@ -66,9 +66,14 @@ Enjoy 🚀🚀
 * Add proxy pass to nginx.conf.
 * Update nginx.conf for the new domain route (api.mysite.com).
 * Set up SSL using CertBot.
-* Delete HTTP from your security group.
 * Add elastic IP for the instance assosiate it, and  change the record (api.mysite.com).
 * Go make some cool shit.
+
+
+## Security Groups
+* HTTP (port 80) - for serving web traffic over HTTP.
+* HTTPS (port 443) - for serving web traffic over HTTPS.
+* SSH (port 22) - for accessing the EC2 instance via SSH.
 
 
 
