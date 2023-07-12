@@ -140,6 +140,12 @@ sudo vim /etc/nginx/nginx.conf
 ```
 
 
+Renew SSL (make sure to allow port 80)
+```bash
+sudo certbot renew
+```
+
+
 
 ### pm2
 
