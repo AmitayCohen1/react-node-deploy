@@ -109,14 +109,11 @@ sudo yum install -y git
 
 Install (Amazon linux 2)
 ```bash
-sudo amazon-linux-extras install nginx1 -y
+sudo dnf install -y nginx
 ```
 
 SSL
 
-```bash
-sudo dnf install -y nginx
-```
 
 ```bash
 sudo yum install -y certbot python2-certbot-nginx
