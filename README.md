@@ -116,11 +116,30 @@ SSL
 
 
 ```bash
-sudo yum install -y certbot python2-certbot-nginx
+sudo python3 -m venv /opt/certbot/
+sudo /opt/certbot/bin/pip install --upgrade pip
+
+sudo /opt/certbot/bin/pip install certbot certbot-nginx
+sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
 ```
 
 ```bash
-sudo certbot
+sudo vim /etc/nginx/nginx.conf
+```
+
+In the HTTP block, add the following lines to redirect all HTTP traffic to HTTPS:
+
+
+```bash
+server {
+listen 80;
+server_name example.com;
+return 301 https://$host$request_uri;
+}
+```
+
+```bash
+sudo certbot --nginx 
 ```
 
 Commands
@@ -171,8 +190,7 @@ pm2 logs
 # 🔗 Links
 
 
-[SSL For Amazon linux 2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt)
-(from “Install and run Certbot” section and change apache to nginx)
+[SSL For Amazon linux 2](https://awswithatiq.com/ssl-setup-on-amazon-linux-2023-using-nginx-and-letsencrypt/)
 
 
 [Route 53 - Domain  ](https://www.youtube.com/watch?v=jDz4j_kkyLA)
