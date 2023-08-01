@@ -115,7 +115,7 @@ sudo amazon-linux-extras install nginx1 -y
 SSL
 
 ```bash
-sudo amazon-linux-extras install epel -y 
+sudo dnf install -y nginx
 ```
 
 ```bash
