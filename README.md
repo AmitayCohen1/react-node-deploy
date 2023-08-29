@@ -107,7 +107,7 @@ sudo yum install -y git
 
 ### Nginx
 
-Install (Amazon linux 2)
+Install Nginx on Amazon linux 2 (2023)
 ```bash
 sudo dnf install -y nginx
 ```
@@ -187,6 +187,46 @@ pm2 logs
 ```
 
 
+
+
+
+
+### redis (2023)
+
+Commands
+```bash
+sudo dnf install -y redis6 
+```
+
+```bash
+sudo systemctl start redis6
+```
+
+```bash
+sudo systemctl enable redis6
+```
+
+```bash
+sudo systemctl is-enabled redis6
+```
+
+```bash
+redis6-server --version
+```
+
+```bash
+redis6-cli ping
+```
+
+
+
+
+
+
+
+
+
+
 # 🔗 Links
 
 
@@ -200,6 +240,9 @@ pm2 logs
 [Deploy React to CloudFront with HTTPS Custom Domain](https://www.youtube.com/watch?v=lPVgfSXTE1Y&t=1s)
 
 [Deploying EC2 Instances](https://www.youtube.com/watch?v=GEVbYQWWJkQ)
+
+[Redis 2023 Amazon linux 2 EC2 Instace](https://serverfault.com/questions/1127483/how-to-install-and-configure-redis-server-on-amazon-linux-2023-al2023)
+
 
 
 
