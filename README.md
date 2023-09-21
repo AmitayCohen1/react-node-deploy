@@ -169,6 +169,11 @@ sudo certbot renew
 ### pm2
 
 Commands
+
+```bash
+sudo npm install pm2 -g
+```
+
 ```bash
 pm2 start server.js 
 ```
