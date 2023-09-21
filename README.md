@@ -87,8 +87,13 @@ Install (Amazon linux 2)
 sudo yum install -y gcc-c++ make
 ```
 
+
+
+### Check here: https://github.com/nodesource/distributions#ubuntu-versions
+
 ```bash
-curl -sL https://rpm.nodesource.com/setup_16.x | sudo -E bash -
+sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
 ```
 
 ```bash
@@ -217,12 +222,6 @@ redis6-server --version
 ```bash
 redis6-cli ping
 ```
-
-
-
-
-
-
 
 
 
