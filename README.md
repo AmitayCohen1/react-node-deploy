@@ -83,22 +83,20 @@ Enjoy 🚀🚀
 ### NodeJS
 Install (Amazon linux 2)
 
-```bash
-sudo yum install -y gcc-c++ make
-```
-
-
-
-### Check here: https://github.com/nodesource/distributions#ubuntu-versions
+Check here: https://github.com/nodesource/distributions#ubuntu-versions
 
 ```bash
 sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+```
+
+```bash
 sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
 ```
 
 ```bash
-sudo yum install -y nodejs
+sudo yum install gcc-c++ make
 ```
+
 
 
 ### Git
