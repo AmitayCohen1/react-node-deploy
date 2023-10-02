@@ -45,5 +45,5 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_PEM }}
-        script: cd /home/ec2-user/readablle-back && git pull && npm install && pm2 restart all
+        script: cd /home/ec2-user/<server-repo-name> && git pull && npm install && pm2 restart all
 
