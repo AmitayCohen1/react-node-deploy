@@ -8,11 +8,13 @@ This guide covers the process of setting up a CI/CD pipeline to automatically de
 
 2. **AWS Account**: You must have an AWS account with permissions to create and configure S3 buckets and CloudFront distributions.
 
-3. **AWS Access Key and Secret**: Generate an AWS access key and secret key with sufficient permissions, and store them as secrets in your GitHub repository.
+3. **IAM Role**: Create an IAM role in AWS with the necessary permissions to access S3 and CloudFront. This role will be assumed by GitHub Actions. Ensure you have the IAM role ARN.
 
-4. **AWS Region**: Determine the AWS region where your S3 bucket and CloudFront distribution will be located.
+4. **GitHub Secrets**: Store sensitive information (IAM role's access keys and other secrets) as GitHub secrets in your GitHub repository.
 
-5. **CloudFront Distribution ID**: Create a CloudFront distribution in your AWS account and note down the Distribution ID.
+5. **AWS Region**: Determine the AWS region where your S3 bucket and CloudFront distribution will be located.
+
+6. **CloudFront Distribution ID**: Create a CloudFront distribution in your AWS account and note down the Distribution ID.
 
 ## Steps
 
@@ -29,8 +31,8 @@ Your GitHub repository will use secrets to store sensitive information that GitH
 4. Click on "New repository secret."
 
 5. Add the following secrets:
-   - `AWS_ACCESS_KEY_ID`: Your AWS access key ID.
-   - `AWS_SECRET_ACCESS_KEY`: Your AWS secret access key.
+   - `AWS_ACCESS_KEY_ID`: Your IAM role's AWS access key ID.
+   - `AWS_SECRET_ACCESS_KEY`: Your IAM role's AWS secret access key.
    - `AWS_REGION`: The AWS region where your resources are located.
    - `AWS_DISTRIBUTION_ID`: The CloudFront distribution ID.
 
@@ -40,7 +42,6 @@ Create a `.github/workflows` directory in your repository if it doesn't exist. T
 
 Copy and paste the following content into your `deploy.yml`:
 
-```markdown
 ```yaml
 name: CI/CD for React Vite to S3 with CloudFront Invalidation
 
@@ -62,11 +63,10 @@ jobs:
           node-version: 14
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set region ${{ secrets.AWS_REGION }}
 
       - name: Build React App
         run: |
@@ -78,4 +78,3 @@ jobs:
 
       - name: Invalidate cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/*"
-
