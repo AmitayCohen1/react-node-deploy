@@ -1,110 +1,105 @@
-# **DRAFT** - CI/CD Setup for Server Deployment to EC2
+# CICD
 
-This guide covers setting up Continuous Integration and Continuous Deployment (CI/CD) for a server using GitHub Actions, deploying directly to an AWS EC2 instance.
+### **Step-by-Step Guide**
 
-## Prerequisites
+**1. Setting Up Your AWS EC2 Instance:**
 
-1. **GitHub Repository**: A GitHub repository where your server code is stored.
-2. **EC2 Instance**: An EC2 instance running with the necessary environment for your application.
-3. **SSH Access**: Your EC2 instance should allow SSH access.
+- **Launch EC2 Instance:**
+    - Log in to the AWS Management Console and launch an EC2 instance with your preferred settings.
+    - Ensure that the security group associated with your EC2 instance allows SSH access (usually on port 22).
+- **Configure Your EC2 Instance:**
+    - Connect to your EC2 instance using SSH.
+    - Install Node.js, npm, and any other dependencies required for your application.
+    - Install **`git`** if you plan to pull the latest code from a repository.
+    - Install PM2 or another process manager to keep your Node.js application running.
 
-## Steps
+**2. Generate and Add Your SSH Key:**
 
-### 1. Setup Secrets in GitHub
+- **Generate an SSH Key Pair on Your Local Machine:**
+    - Open a terminal.
+    - Run the following command to generate a new SSH key pair:Replace **`"your_email@example.com"`** with your email address. This comment helps identify the key.
+        
+        ```bash
+        ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+        ```
+        
+    - Follow the prompts to save it to a file within the **`.ssh`** directory (e.g., **`/home/youruser/.ssh/id_rsa`**).
+    - You will get two files, for example **`id_rsa`** and **`id_rsa.pub`**. The **`.pub`** file is your public key.
+- **Add Your Public Key to EC2:**
+    - Copy the content of your public key file (ca) by displaying it using the command **`cat ~/.ssh/id_rsa.pub`** and copying the output.
+    - SSH into your EC2 instance.
+    - Append the public key content into **`~/.ssh/authorized_keys`** for the user you will use for SSH in your EC2.
+    - 
+    
+    ```bash
+    echo 'your-public-key-text' >> ~/.ssh/authorized_keys
+    ```
+    
+    - Set the correct permissions for the **`.ssh`** directory and the **`authorized_keys`** file with the following commands on your EC2 instance:
+        
+        ```bash
+        chmod 700 ~/.ssh
+        chmod 600 ~/.ssh/authorized_keys
+        ```
+        
 
-Store sensitive information securely in your GitHub repository's secrets for use by GitHub Actions.
+**3. Set Up Repository Secrets in GitHub:**
 
-- Navigate to your repository, then to Settings > Secrets.
-- Add the following secrets:
-  - `EC2_HOST`: The public IP address or hostname of your EC2 instance.
-  - `EC2_USER`: Typically `ec2-user` for Amazon Linux instances.
-  - `EC2_PEM`: The private key for SSH, including everything from `-----BEGIN RSA PRIVATE KEY-----` to `-----END RSA PRIVATE KEY-----`.
+- **GitHub Secrets:**
+    - Navigate to your GitHub repository, click on 'Settings' > 'Secrets' > 'New repository secret'.
+    - Add the following secrets:
+        - **`EC2_HOST`**: The public IP address or DNS name of your EC2 instance.
+        - **`EC2_USER`**: The username for SSH on your EC2 instance (e.g., **`ec2-user`**).
+        - **`SSH_PRIVATE_KEY`**: The entire content of your private SSH key (**`id_rsa`**). Ensure you copy the entire content of the private key, including the **`BEGIN`** and **`END`** lines.
+    
+    ```bash
+    cat ~/.ssh/id_rsa
+    ```
+    
 
-## Using RSA SSH Key for CI/CD on macOS
+**4. Create the GitHub Actions Workflow:**
 
-### Generating RSA SSH Key Pair
-
-1. **Generate an SSH Key Pair**
-
-```bash
-   ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ~/.ssh/my-cicd-key
-```
-
-Replace "your_email@example.com" with your email address. This will create my-cicd-key (private key) and my-cicd-key.pub (public key) in the ~/.ssh directory.
-
-1. Secure the Private Key:
-
-Ensure the generated private key is kept secure:
-
-```bash
-chmod 400 ~/.ssh/my-cicd-key
-```
-
-### Add Public Key to EC2
-   Append the contents of my-cicd-key.pub from your ~/.ssh directory to the ~/.ssh/authorized_keys file on your EC2 instance. This allows the holder of the private key to SSH into the instance.
-   Using with GitHub Actions
-   Encode the Private Key for GitHub:
-   Convert the private key to a Base64 string to store in GitHub Secrets. On macOS, use:
-
-```bash
-base64 < ~/.ssh/my-cicd-key | tr -d '\n'
-```
-
-Copy the output string.
-
-## Store in GitHub Secrets
-
-Navigate to your GitHub repository's settings, go to 'Secrets', and add a new secret containing the Base64-encoded string.
-
-## Security Considerations
-
-1. Keep the Private Key Secret:
-   Only share the public key. The private key should be kept confidential.
-
-2. Regularly Rotate Keys:
-   Periodically regenerate and rotate your SSH keys.
-
-3. Restrict Access:
-   Ensure only the necessary personnel and processes have access to the private key.
-
-### 2. Setup GitHub Actions Workflow
-
-Create a CI/CD workflow in your repository.
-
-- Create a `.github/workflows` directory if not present.
-- Add a new file, `deploy.yml`, with the following content:
+- **Workflow File:**
+    - In your repository, create a directory named **`.github/workflows`**.
+    - Inside this directory, create a file named **`deploy.yml`**.
+    - Add the following content to **`deploy.yml`**:
 
 ```yaml
 name: Deploy to EC2
-on: [push]
+
+on:
+  push:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Deploy to EC2
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_PEM }}
-          script: |
-            cd /home/ec2-user/your-project-directory
-            git pull
-            npm install
-            pm2 restart all
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd /path/to/your/project
+          git pull
+          npm install --production
+          pm2 restart all
 ```
 
-Replace `/home/ec2-user/your-project-directory` with your project's path on the EC2 instance.
+**5. Test the GitHub Actions Workflow:**
 
-### 3. Commit and Push
+- **Push and Check:**
+    - Commit and push the workflow file to your GitHub repository.
+    - Push a change to your repository to trigger the workflow.
+    - Check the 'Actions' tab in your GitHub repository to see the workflow run.
 
-- Commit the `deploy.yml` file to your repository.
-- Push it to the branch you want to trigger deployment from (e.g., `main`).
-- This workflow will execute automatically when changes are pushed.
+**6. Verify Deployment:**
 
-## Conclusion
+- **SSH to EC2 Instance:**
+    - After the workflow completes, SSH into your EC2 instance to verify that the application has been updated and restarted by PM2.
 
-This setup provides a basic CI/CD pipeline for deploying your application to an AWS EC2 instance using GitHub Actions.
+By following these instructions, you should be able to automatically deploy your code to an EC2 instance using GitHub Actions upon every push to your repository.
