@@ -11,10 +11,11 @@ This guide covers the process of setting up a CI/CD pipeline to automatically de
 Your GitHub repository will use secrets to store sensitive information that GitHub Actions will use. Here's how to set them up:
 
 ## Add the following secrets to GitHub repository secrets :
-   - `AWS_ACCESS_KEY_ID`: Your IAM role's AWS access key ID.
-   - `AWS_SECRET_ACCESS_KEY`: Your IAM role's AWS secret access key.
-   - `AWS_REGION`: The AWS region where your s3 is located.
-   - `AWS_DISTRIBUTION_ID`: The CloudFront distribution ID.
+
+- `AWS_ACCESS_KEY_ID`: Your IAM role's AWS access key ID.
+- `AWS_SECRET_ACCESS_KEY`: Your IAM role's AWS secret access key.
+- `AWS_REGION`: The AWS region where your s3 is located.
+- `AWS_DISTRIBUTION_ID`: The CloudFront distribution ID (something like E32F62GX36SROL).
 
 ### 2. Create GitHub Actions Workflow
 
@@ -51,10 +52,11 @@ jobs:
       - name: Build React App
         run: |
           npm install
-          npm run build 
+          npm run build
 
       - name: Deploy app build to S3 bucket
         run: aws s3 sync ./dist s3://your-bucket-name/ --delete
 
       - name: Invalidate cache
         run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/*"
+```
