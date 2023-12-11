@@ -13,7 +13,7 @@ Your GitHub repository will use secrets to store sensitive information that GitH
 ## Add the following secrets to GitHub repository secrets :
    - `AWS_ACCESS_KEY_ID`: Your IAM role's AWS access key ID.
    - `AWS_SECRET_ACCESS_KEY`: Your IAM role's AWS secret access key.
-   - `AWS_REGION`: The AWS region where your resources are located.
+   - `AWS_REGION`: The AWS region where your s3 is located.
    - `AWS_DISTRIBUTION_ID`: The CloudFront distribution ID.
 
 ### 2. Create GitHub Actions Workflow
