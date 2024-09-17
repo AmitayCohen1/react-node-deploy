@@ -235,6 +235,7 @@ worker_processes auto;
 error_log /var/log/nginx/error.log notice;
 pid /run/nginx.pid;
 
+```bash
 # Load dynamic modules
 include /usr/share/nginx/modules/*.conf;
 
@@ -294,7 +295,7 @@ http {
     }
 }
 
-
+```
 
 
 # 🔗 Links
