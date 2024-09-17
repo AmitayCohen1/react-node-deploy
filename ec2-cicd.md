@@ -2,6 +2,14 @@
 
 ### **Step-by-Step Guide**
 
+
+# POTENTIONAL ISSUES: 
+# // SECUTIRY GROUPS 
+# // MAKE SURE .GITIGNORE HAS .ENV SO PORT="" WONT MESS UP WITH THINGS
+# // DONT USE NGNIX UP UNTILL YOU FINISH THAT 
+
+
+
 **1. Setting Up Your AWS EC2 Instance:**
 
 - **Launch EC2 Instance:**
