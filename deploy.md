@@ -228,6 +228,74 @@ redis6-cli ping
 
 
 
+example for ngnix conf: 
+# User and process settings
+user nginx;
+worker_processes auto;
+error_log /var/log/nginx/error.log notice;
+pid /run/nginx.pid;
+
+# Load dynamic modules
+include /usr/share/nginx/modules/*.conf;
+
+events {
+    worker_connections 1024;
+}
+
+http {
+    # Log format
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    # Performance settings
+    sendfile            on;
+    tcp_nopush          on;
+    keepalive_timeout   65;
+    types_hash_max_size 4096;
+
+    # Include MIME types
+    include             /etc/nginx/mime.types;
+    default_type        application/octet-stream;
+
+    # Load modular configuration files
+    include /etc/nginx/conf.d/*.conf;
+
+    # SSL server block for the HTTPS API
+    server {
+        server_name api.bloodexplain.com;
+
+        # Proxy settings to forward traffic to your Node.js app running on port 4000
+        location / {
+            proxy_pass http://localhost:4000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection 'upgrade';
+            proxy_set_header Host $host;
+            proxy_cache_bypass $http_upgrade;
+        }
+
+        listen 443 ssl; # managed by Certbot
+        ssl_certificate /etc/letsencrypt/live/api.bloodexplain.com/fullchain.pem; # managed by Certbot
+        ssl_certificate_key /etc/letsencrypt/live/api.bloodexplain.com/privkey.pem; # managed by Certbot
+        include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+        ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+    }
+
+    # HTTP server block for handling HTTP to HTTPS redirection
+    server {
+        listen 80;
+        server_name api.bloodexplain.com;
+
+        # Redirect HTTP requests to HTTPS
+        return 301 https://$host$request_uri;
+    }
+}
+
+
+
 
 # 🔗 Links
 
